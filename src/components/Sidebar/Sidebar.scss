@@ -1,5 +1,49 @@
 .sidebar {
 	background-color: #e99d72;
-	height: 100%;
-	flex: 3;
+	color: white;
+	flex: 1;
+	padding: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	&__avatar {
+		width: 4rem;
+		height: 4rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		background-size: contain;
+	}
+	color: #f8d9c0;
+	&__logout {
+		cursor: pointer;
+		padding: 5px;
+		display: flex;
+		align-items: center;
+		&:hover {
+			background-color: #ebac87;
+			color: white;
+			border-radius: 1rem;
+			padding: 5px;
+			font-weight: 600;
+		}
+	}
+	&__nav-links {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		cursor: pointer;
+		&.active {
+			background-color: #ebac87;
+			color: white;
+			border-radius: 1rem;
+			padding: 5px 1rem;
+			font-weight: 600;
+		}
+	}
 }
