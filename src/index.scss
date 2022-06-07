@@ -1,0 +1,19 @@
+body {
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu";
+	box-sizing: border-box;
+	background-image: linear-gradient(black, rgb(17, 17, 17));
+	color: white;
+	padding: 1rem 2rem;
+}
+
+.App {
+	display: flex;
+	border-radius: 1rem;
+	overflow: hidden;
+	height: 94vh;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
