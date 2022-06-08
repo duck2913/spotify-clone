@@ -1,4 +1,4 @@
-import { loginEndpoint } from "../../spotify";
+import { loginEndpoint } from "../../api/spotify";
 import "./LoginScreen.css";
 
 export const LoginScreen = () => {

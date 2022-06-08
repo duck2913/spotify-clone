@@ -7,17 +7,29 @@ import { FeedScreen } from "../../screens/Feed/FeedScreen";
 import LibraryScreen from "../../screens/Library/LibraryScreen";
 import PlayerScreen from "../../screens/Player/PlayerScreen";
 import TrendingScreen from "../../screens/Trending/TrendingScreen";
+import { setClientToken } from "../../api/spotify";
 
 const Home = () => {
+	const [token, setToken] = useState<any>("");
+
 	useEffect(() => {
-		const _token = window.location.hash.split("&")[0];
-		_token && localStorage.setItem("token", JSON.stringify(_token));
+		const localToken = localStorage.getItem("token");
+		const hash_token = window.location.hash.split("&")[0].split("=")[1];
+		window.location.hash = "";
+		if (!localToken && hash_token) {
+			localStorage.setItem("token", hash_token);
+			setToken(hash_token);
+			setClientToken(localStorage.getItem("token"));
+		} else {
+			setToken(localToken);
+			setClientToken(localToken);
+		}
 	}, []);
 
 	return (
 		<>
-			{!localStorage.getItem("token") && <LoginScreen />}
-			{localStorage.getItem("token") && (
+			{!token && <LoginScreen />}
+			{token && (
 				<BrowserRouter>
 					<Routes>
 						<Route path="/" element={<App />}>

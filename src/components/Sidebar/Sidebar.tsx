@@ -6,17 +6,23 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import LocalFireDepartment from "@mui/icons-material/LocalFireDepartment";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useEffect, useState } from "react";
+import apiClient from "../../api/spotify";
 
 const Sidebar = () => {
-	const activeStyle = {};
+	const [avatarUrl, setAvatarUrl] = useState<string>(
+		"https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80",
+	);
+
+	useEffect(() => {
+		apiClient.get("me").then((response) => {
+			setAvatarUrl(response.data.images[0].url);
+		});
+	}, []);
 
 	return (
 		<div className="sidebar">
-			<img
-				className="sidebar__avatar"
-				src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=456&q=80"
-				alt="avatar images"
-			/>
+			<img className="sidebar__avatar" src={avatarUrl} alt="avatar images" />
 			<div className="sidebar__nav-links">
 				<NavLink
 					to={"/feed"}

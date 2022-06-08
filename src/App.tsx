@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import ScreenContainer from "./components/ScreenContainer/ScreenContainer";
 import Sidebar from "./components/Sidebar/Sidebar";
 
