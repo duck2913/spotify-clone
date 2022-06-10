@@ -1,0 +1,49 @@
+.library {
+	// this is  the grid container
+	display: grid;
+	gap: 2rem 3rem;
+	grid-template-columns: repeat(4, 1fr);
+	grid-auto-rows: min-content;
+	.playlist {
+		// grid item
+		position: relative;
+		padding: 1rem;
+		border-radius: 1rem;
+		overflow: hidden;
+		background: linear-gradient(to top right, #3f4b63, #18253b);
+		box-shadow: rgba(67, 69, 71, 0.2) 0px 8px 24px;
+		transition: all 0.4s ease;
+		&:hover {
+			transform: scale(1.05);
+			.playlist__play {
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+		&__img {
+			width: 100%;
+			border-radius: 1rem;
+		}
+		&__info {
+			margin-top: 1rem;
+		}
+		&__amount {
+			color: #505c75;
+		}
+		&__title {
+			color: #8c99b0;
+		}
+		&__play {
+			position: absolute;
+			bottom: 1.5rem;
+			right: 1rem;
+			background-color: transparent;
+			border: none;
+			color: lightsalmon;
+			transform: scale(1.7);
+			opacity: 0;
+			pointer-events: none;
+			transition: all 0.5s ease;
+		}
+	}
+}
