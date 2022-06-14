@@ -13,12 +13,12 @@ const LibraryScreen = () => {
 			.then((data) => setPlaylists(data));
 	}, []);
 	function playPlaylist(id: string) {
-		navigate(`/player/${id}`);
+		navigate(`/player/`, { state: { id: id } });
 	}
 	return (
 		<div className="library">
-			{playlists?.map((playlist: any) => (
-				<div className="playlist">
+			{playlists?.map((playlist: any, index: number) => (
+				<div className="playlist" key={index}>
 					<img
 						src={playlist.images[0].url}
 						alt="playlist cover"

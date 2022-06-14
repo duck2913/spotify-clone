@@ -2,6 +2,57 @@
 	flex: 12;
 	background-color: #1e2a3e;
 	border-radius: 1rem;
-	padding: 2rem 3rem;
 	overflow-y: scroll;
+	background-color: #1e2a3e;
+	opacity: 1;
+	background-image: linear-gradient(
+			30deg,
+			#111114 12%,
+			transparent 12.5%,
+			transparent 87%,
+			#111114 87.5%,
+			#111114
+		),
+		linear-gradient(
+			150deg,
+			#111114 12%,
+			transparent 12.5%,
+			transparent 87%,
+			#111114 87.5%,
+			#111114
+		),
+		linear-gradient(
+			30deg,
+			#111114 12%,
+			transparent 12.5%,
+			transparent 87%,
+			#111114 87.5%,
+			#111114
+		),
+		linear-gradient(
+			150deg,
+			#111114 12%,
+			transparent 12.5%,
+			transparent 87%,
+			#111114 87.5%,
+			#111114
+		),
+		linear-gradient(
+			60deg,
+			#11111477 25%,
+			transparent 25.5%,
+			transparent 75%,
+			#11111477 75%,
+			#11111477
+		),
+		linear-gradient(
+			60deg,
+			#11111477 25%,
+			transparent 25.5%,
+			transparent 75%,
+			#11111477 75%,
+			#11111477
+		);
+	background-size: 160px 280px;
+	background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
 }

@@ -20,6 +20,11 @@ const Sidebar = () => {
 		});
 	}, []);
 
+	function logoutHandler() {
+		localStorage.clear();
+		window.location.reload();
+	}
+
 	return (
 		<div className="sidebar">
 			<img className="sidebar__avatar" src={avatarUrl} alt="avatar images" />
@@ -70,10 +75,10 @@ const Sidebar = () => {
 					Library
 				</NavLink>
 			</div>
-			<div className="sidebar__logout">
+			<button className="sidebar__logout" onClick={logoutHandler}>
 				<LogoutIcon />
 				Log out
-			</div>
+			</button>
 		</div>
 	);
 };

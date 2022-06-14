@@ -1,0 +1,16 @@
+.track-info__img-container {
+	width: 70%;
+	position: relative;
+	z-index: 1;
+	.track-info__img {
+		border-radius: 1rem;
+		z-index: 1;
+	}
+	.track-info__shadow {
+		position: absolute;
+		bottom: -15px;
+		left: 0;
+		z-index: -1;
+		filter: blur(10px);
+	}
+}
