@@ -21,7 +21,6 @@ const PlayerScreen = () => {
 			.get(`/playlists/${id}/tracks`)
 			.then((response) => response.data)
 			.then((data) => {
-				console.log(data);
 				setTracks(data.items);
 				setCurrentTrack(data.items[0].track);
 			});
@@ -31,7 +30,7 @@ const PlayerScreen = () => {
 			<div className="player__left"></div>
 			<div className="player__right">
 				<TrackInfo album={currentTrack.album} />
-				<Queue />
+				<Queue tracks={tracks} setCurrentIdx={setCurrentIdx} />
 			</div>
 		</div>
 	);

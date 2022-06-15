@@ -1,5 +1,7 @@
 .library {
 	// this is  the grid container
+	height: 100%;
+	overflow-y: scroll;
 	margin: 2rem;
 	display: grid;
 	gap: 2rem 3rem;
