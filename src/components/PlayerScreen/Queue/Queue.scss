@@ -40,5 +40,13 @@
 			transform: scale(0.95);
 			color: lightcyan;
 		}
+		&:active {
+			transform: scale(0.95) translateY(-5px);
+			color: lightcyan;
+		}
+	}
+	.active-song {
+		transform: scale(0.9);
+		color: lightcyan;
 	}
 }

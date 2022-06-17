@@ -32,7 +32,7 @@ const Sidebar = () => {
 				<NavLink
 					to={"/feed"}
 					className={({ isActive }) =>
-						isActive ? "sidebar__link active" : "sidebar__link"
+						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
 					}
 				>
 					<DashboardIcon />
@@ -41,7 +41,7 @@ const Sidebar = () => {
 				<NavLink
 					to={"/favorites"}
 					className={({ isActive }) =>
-						isActive ? "sidebar__link active" : "sidebar__link"
+						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
 					}
 				>
 					<FavoriteIcon />
@@ -50,7 +50,7 @@ const Sidebar = () => {
 				<NavLink
 					to={"/player"}
 					className={({ isActive }) =>
-						isActive ? "sidebar__link active" : "sidebar__link"
+						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
 					}
 				>
 					<PlayArrowIcon />
@@ -59,7 +59,7 @@ const Sidebar = () => {
 				<NavLink
 					to={"/trending"}
 					className={({ isActive }) =>
-						isActive ? "sidebar__link active" : "sidebar__link"
+						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
 					}
 				>
 					<LocalFireDepartment />
@@ -68,7 +68,7 @@ const Sidebar = () => {
 				<NavLink
 					to={"/library"}
 					className={({ isActive }) =>
-						isActive ? "sidebar__link active" : "sidebar__link"
+						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
 					}
 				>
 					<AccountBalanceIcon />

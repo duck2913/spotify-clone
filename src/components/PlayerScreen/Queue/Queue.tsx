@@ -1,18 +1,31 @@
 import "./Queue.scss";
-import React from "react";
+import React, { useContext } from "react";
+import { SongPlayerContext } from "../../../context/SongPlayerContext";
 
 interface Props {
 	tracks: any[];
 	setCurrentIdx: React.Dispatch<React.SetStateAction<number>>;
+	currentIdx: number;
 }
 
-const Queue = React.memo(({ tracks, setCurrentIdx }: Props) => {
+const Queue = React.memo(({ tracks, setCurrentIdx, currentIdx }: Props) => {
+	const { setIsPlaying, setCurrentTime, setPercentage } = useContext(SongPlayerContext);
+
 	const tracksData = tracks.slice(0, 20).map((track) => track.track);
 	return (
 		<div className="queue">
 			<div className="queue__list">
 				{tracksData.map((track: any, index: number) => (
-					<li className="queue__item" key={index} onClick={() => setCurrentIdx(index)}>
+					<li
+						className={`queue__item ${index === currentIdx ? "active-song" : ""}`}
+						key={index}
+						onClick={() => {
+							setCurrentIdx(index);
+							setIsPlaying(true);
+							setCurrentTime(0);
+							setPercentage(0);
+						}}
+					>
 						<span>
 							{index + 1}. {track.name}
 						</span>{" "}

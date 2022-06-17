@@ -1,6 +1,7 @@
 circle {
 	transform: rotate(-86deg);
 	transform-origin: 50% 50%;
+	transition: all 1s linear;
 }
 
 .active {

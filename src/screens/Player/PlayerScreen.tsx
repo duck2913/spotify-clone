@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import apiClient from "../../api/spotify";
 import AudioPlayer from "../../components/PlayerScreen/AudioPlayer/AudioPlayer";
 import Queue from "../../components/PlayerScreen/Queue/Queue";
 import TrackInfo from "../../components/PlayerScreen/TrackInfo/TrackInfo";
+import { SongPlayerContext } from "../../context/SongPlayerContext";
 import "./PlayerScreen.scss";
 
 interface CustomizedState {
@@ -11,9 +12,9 @@ interface CustomizedState {
 }
 const PlayerScreen = () => {
 	const location = useLocation();
-	const [tracks, setTracks] = useState<any[]>([]);
-	const [currentTrack, setCurrentTrack] = useState<any>({});
-	const [currentIdx, setCurrentIdx] = useState(0);
+
+	const { currentIdx, setCurrentIdx, tracks, setTracks, currentTrack, setCurrentTrack } =
+		useContext(SongPlayerContext);
 
 	useEffect(() => {
 		const state = location.state as CustomizedState;
@@ -38,7 +39,7 @@ const PlayerScreen = () => {
 			</div>
 			<div className="player__right">
 				<TrackInfo album={currentTrack?.album} />
-				<Queue tracks={tracks} setCurrentIdx={setCurrentIdx} />
+				<Queue tracks={tracks} setCurrentIdx={setCurrentIdx} currentIdx={currentIdx} />
 			</div>
 		</div>
 	);
