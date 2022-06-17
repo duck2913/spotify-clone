@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import apiClient from "../../api/spotify";
-import Queue from "../../components/Queue/Queue";
-import TrackInfo from "../../components/TrackInfo/TrackInfo";
+import AudioPlayer from "../../components/PlayerScreen/AudioPlayer/AudioPlayer";
+import Queue from "../../components/PlayerScreen/Queue/Queue";
+import TrackInfo from "../../components/PlayerScreen/TrackInfo/TrackInfo";
 import "./PlayerScreen.scss";
 
 interface CustomizedState {
@@ -25,11 +26,18 @@ const PlayerScreen = () => {
 				setCurrentTrack(data.items[0].track);
 			});
 	}, [location.state]);
+
+	useEffect(() => {
+		setCurrentTrack(tracks[currentIdx]?.track);
+	}, [currentIdx, tracks]);
+
 	return (
 		<div className="player">
-			<div className="player__left"></div>
+			<div className="player__left">
+				<AudioPlayer currentTrack={currentTrack} />
+			</div>
 			<div className="player__right">
-				<TrackInfo album={currentTrack.album} />
+				<TrackInfo album={currentTrack?.album} />
 				<Queue tracks={tracks} setCurrentIdx={setCurrentIdx} />
 			</div>
 		</div>

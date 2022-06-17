@@ -1,17 +1,18 @@
 import "./Queue.scss";
+import React from "react";
 
 interface Props {
 	tracks: any[];
 	setCurrentIdx: React.Dispatch<React.SetStateAction<number>>;
 }
-const Queue = ({ tracks, setCurrentIdx }) => {
-	const tracksData = tracks.slice(0, 13).map((track) => track.track);
-	console.log("🚀 -> trackDatas", tracksData);
+
+const Queue = React.memo(({ tracks, setCurrentIdx }: Props) => {
+	const tracksData = tracks.slice(0, 20).map((track) => track.track);
 	return (
 		<div className="queue">
 			<div className="queue__list">
-				{tracksData.map((track, index) => (
-					<li className="queue__item" key={index} onClick={setCurrentIdx(index)}>
+				{tracksData.map((track: any, index: number) => (
+					<li className="queue__item" key={index} onClick={() => setCurrentIdx(index)}>
 						<span>
 							{index + 1}. {track.name}
 						</span>{" "}
@@ -26,6 +27,6 @@ const Queue = ({ tracks, setCurrentIdx }) => {
 			</div>
 		</div>
 	);
-};
+});
 
 export default Queue;

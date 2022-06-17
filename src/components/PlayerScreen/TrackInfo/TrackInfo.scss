@@ -7,28 +7,30 @@
 	background-color: #27354d;
 	border-radius: 1rem;
 	border-bottom-right-radius: 0;
+
 	&__description {
 		color: lightblue;
-		max-width: 80%;
+		width: 80%;
 		margin-top: 10px;
 		overflow: hidden;
+		text-overflow: ellipsis;
 		p {
 			color: rgb(156, 185, 195);
 			margin-top: 8px;
 			font-size: 1rem;
 		}
 		.marquee {
+			width: 10rem;
 			white-space: nowrap;
 			display: inline-block;
 			animation: marquee 12s linear infinite;
-			padding-left: 100%;
 		}
 	}
 }
 
 @keyframes marquee {
 	0% {
-		transform: translate(0%);
+		transform: translate(200%);
 	}
 	100% {
 		transform: translate(-100%);

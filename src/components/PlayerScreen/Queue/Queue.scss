@@ -17,10 +17,15 @@
 		padding-left: 3rem;
 		overflow-y: scroll;
 		scrollbar-color: #6969dd #6161615d;
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
 		list-style: none;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 	&__item {
 		display: flex;
