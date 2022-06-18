@@ -33,9 +33,6 @@ const Home = () => {
 				<BrowserRouter>
 					<Routes>
 						<Route path="/" element={<App />}>
-							<Route path="favorites" element={<FavoriteScreen />} />
-							<Route path="feed" element={<FeedScreen />} />
-							<Route path="trending" element={<TrendingScreen />} />
 							<Route path="player" element={<PlayerScreen />} />
 							<Route path="library" element={<LibraryScreen />} />
 							<Route

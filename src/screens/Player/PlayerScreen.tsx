@@ -4,6 +4,7 @@ import apiClient from "../../api/spotify";
 import AudioPlayer from "../../components/PlayerScreen/AudioPlayer/AudioPlayer";
 import Queue from "../../components/PlayerScreen/Queue/Queue";
 import TrackInfo from "../../components/PlayerScreen/TrackInfo/TrackInfo";
+import { Widgets } from "../../components/PlayerScreen/Widgets/Widgets";
 import { SongPlayerContext } from "../../context/SongPlayerContext";
 import "./PlayerScreen.scss";
 
@@ -25,7 +26,8 @@ const PlayerScreen = () => {
 			.then((data) => {
 				setTracks(data.items);
 				setCurrentTrack(data.items[0].track);
-			});
+			})
+			.catch((error) => console.error(error));
 	}, [location.state]);
 
 	useEffect(() => {
@@ -36,6 +38,7 @@ const PlayerScreen = () => {
 		<div className="player">
 			<div className="player__left">
 				<AudioPlayer currentTrack={currentTrack} />
+				{<Widgets artistId={currentTrack?.artists?.[0]?.id} />}
 			</div>
 			<div className="player__right">
 				<TrackInfo album={currentTrack?.album} />

@@ -30,24 +30,6 @@ const Sidebar = () => {
 			<img className="sidebar__avatar" src={avatarUrl} alt="avatar images" />
 			<div className="sidebar__nav-links">
 				<NavLink
-					to={"/feed"}
-					className={({ isActive }) =>
-						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
-					}
-				>
-					<DashboardIcon />
-					Feed
-				</NavLink>
-				<NavLink
-					to={"/favorites"}
-					className={({ isActive }) =>
-						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
-					}
-				>
-					<FavoriteIcon />
-					Favorites
-				</NavLink>
-				<NavLink
 					to={"/player"}
 					className={({ isActive }) =>
 						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
@@ -55,15 +37,6 @@ const Sidebar = () => {
 				>
 					<PlayArrowIcon />
 					Player
-				</NavLink>
-				<NavLink
-					to={"/trending"}
-					className={({ isActive }) =>
-						isActive ? "sidebar__link sidebar-active" : "sidebar__link"
-					}
-				>
-					<LocalFireDepartment />
-					Trending
 				</NavLink>
 				<NavLink
 					to={"/library"}
